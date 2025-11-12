@@ -1,0 +1,53 @@
+/* 🌌 Fond principal */
+body {
+  background: radial-gradient(circle at top, #1a001f, #000);
+  color: white;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 💜 Galerie romantique */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+}
+
+/* 💞 Style des images générales */
+.gallery img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px; /* forme carrée douce */
+  box-shadow: 0 0 20px rgba(186, 85, 211, 0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* effet au survol */
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px rgba(255, 105, 180, 0.9);
+}
+
+/* 💖 Pour les images en forme de cœur */
+.gallery img.heart {
+  clip-path: path(
+    "M24 4C12 -4 0 8 0 20c0 8 6 16 12 20l12 12 12-12c6-4 12-12 12-20 0-12-12-24-24-16z"
+  );
+  border-radius: 0;
+}
+
+/* 🌟 Animation douce d’apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.gallery img {
+  animation: fadeIn 1s ease forwards;
+}
+

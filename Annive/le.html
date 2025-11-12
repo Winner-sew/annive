@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Mon Amour 💖</title>
+    <link rel="stylesheet" href="mon.css">
+</head>
+<body>
+
+    <!-- Musique de fond -->
+    <audio id="musique" loop>
+        <source src="music/Meiitod_-_Tes_yeux(360p)(1).mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l’audio.
+    </audio>
+
+    <!-- Bouton pour démarrer la musique -->
+    <button id="playButton" style="display: none;">🔊 Lancer la musique</button>
+
+    <div class="container">
+        <h1>🎂 Joyeux Anniversaire, mon amour 💕</h1>
+
+        <div class="poeme">
+            <p>
+                Ma chère Alli,<br><br>
+
+                Je repense souvent à la façon dont tout a commencé entre nous. À vrai dire, au début, je ne savais pas encore que tu allais devenir celle qui allait occuper chaque recoin de mon cœur. Ce n’était qu’un petit début, un simple feeling, rien de plus. Et pourtant… le 5 février a tout changé. Ce jour-là, nos chemins se sont liés pour de vrai, et depuis, ma vie n’a plus jamais été la même.<br><br>
+
+                Tu es entrée dans ma vie comme une lumière douce, avec ton intelligence, ta tendresse et ta façon unique de toujours être là pour moi. Tu as ce cœur si sensible, si pur, qui me touche à chaque fois. J’aime la façon dont tu ressens les choses profondément, comme moi. J’aime ta manière de donner ton amour sans compter, d’être vraie, entière, sincère.<br><br>
+
+                Je sais, Alli, que je ne suis pas parfait. J’ai parfois ce caractère difficile, cette fâcheuse tendance à me fâcher pour un rien, à chercher les débats inutiles. Et dans ces moments-là, je te blesse, alors que c’est tout le contraire de ce que je veux faire. Ce n’est pas de la méchanceté, c’est juste un mélange de maladresse et de peur… la peur de mal te comprendre, la peur de te perdre, la peur de ne pas être à la hauteur de tout l’amour que tu me donnes.<br><br>
+
+                Mais une chose est certaine, je t’aime.<br>
+                Je t’aime vraiment, profondément, sincèrement.<br>
+                Je veux te voir sourire chaque jour, je veux te combler de bonheur, je veux te protéger, te rassurer, te faire sentir aimée comme jamais.<br><br>
+
+                Tu veux faire ta vie avec moi, et moi, je n’ai qu’un seul rêve : la faire avec toi.<br>
+                Pas seulement pour aujourd’hui, mais pour demain, pour après, pour toujours.<br>
+                Et si Dieu nous accorde encore des jours ensemble, je promets de les remplir d’amour, de patience et de douceur, parce que tu mérites ce qu’il y a de plus beau.<br><br>
+
+                Merci d’être celle que tu es. Merci de m’aimer malgré mes défauts. Merci de m’avoir appris ce que veut vraiment dire aimer quelqu’un.<br><br>
+
+                Je t’aime, Alli, et je t’aimerai encore plus demain. ❤️<br><br>
+
+                Ton homme,<br>
+                Winner🏆🏆🏆
+            </p>
+        </div>
+        <div class="gallery">
+  <img src="image/alli 1.jpg" alt="amour">
+  <img src="image/alli.jpg.jpg" alt="amour" class="heart">
+  <img src="image/alli 2.jpg" alt="amour">
+  <img src="image/alli 2.jpg" alt="amour" class="heart">
+  <img src="image/alli 4.jpg" alt="amour">
+  <img src="image/alli.jpg.jpg" alt="amour">
+  <img src="image/alli 3.jpg" alt="">
+</div>
+    <video controls>
+        <source src="vidéo/i 3.mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <video controls>
+        <source src="vidéo/i 1 - Copie.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <video controls>
+        <source src="vidéo/i 2.mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <video controls>
+        <source src="vidéo/i 4.mp4"></video>
+        <video controls> <source src="vidéo/i 6.mp4"></video>
+        <video controls>
+            <source src="vidéo/i 5.mp4"></video>
+</div>
+
+    </div>
+
+    <script>
+        const musique = document.getElementById('musique');
+        const playButton = document.getElementById('playButton');
+
+        window.addEventListener('load', () => {
+            musique.play().then(() => {
+                playButton.style.display = 'none';
+            }).catch(() => {
+                playButton.style.display = 'block';
+            });
+        });
+
+        playButton.addEventListener('click', () => {
+            musique.play();
+            playButton.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

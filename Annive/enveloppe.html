@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💌 Pour Toi Mon Amour 💌</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #1a001f, #000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Great Vibes", cursive;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-shadow: 0 0 25px violet, 0 0 45px purple;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* Conteneur de l’enveloppe */
+    .envelope-container {
+      position: relative;
+      width: 240px;
+      height: 160px;
+      cursor: pointer;
+      perspective: 800px;
+      z-index: 2;
+    }
+
+    .envelope {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #6a0dad, #4b0082);
+      position: absolute;
+      border-radius: 5px;
+      box-shadow: 0 0 40px rgba(186, 85, 211, 0.8);
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    /* Rabat de l’enveloppe */
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, #8a2be2, #6a0dad);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top;
+      transition: transform 1s ease-in-out;
+      border-radius: 5px 5px 0 0;
+    }
+
+    /* Cœur au centre */
+    .heart {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 45px;
+      height: 45px;
+      background: pink;
+      clip-path: path("M24 4C12 -4 0 8 0 20c0 8 6 16 12 20l12 12 12-12c6-4 12-12 12-20 0-12-12-24-24-16z");
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 25px rgba(255, 192, 203, 0.8);
+    }
+
+    /* Animation ouverture */
+    .open .flap {
+      transform: rotateX(180deg);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 1.3rem;
+      color: #d8bfd8;
+      animation: fadeIn 3s ease-in;
+      z-index: 2;
+    }
+
+    /* Animation cœur */
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.2); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Apparition du texte */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Fond animé avec petits cœurs/paillettes */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, pink, violet);
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) scale(1); opacity: 1; }
+      100% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background" id="background"></div>
+
+  <h1>💌 Clique sur l’enveloppe pour découvrir ta surprise 💞</h1>
+
+  <div class="envelope-container" id="envelopeContainer" onclick="openLetter()">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <footer>De ton amour ❤️</footer>
+
+  <script>
+    // Effet de particules qui tombent (paillettes/cœurs)
+    const background = document.getElementById("background");
+
+    for (let i = 0; i < 40; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDuration = 5 + Math.random() * 5 + "s";
+      particle.style.animationDelay = Math.random() * 5 + "s";
+      particle.style.width = particle.style.height = (6 + Math.random() * 10) + "px";
+      background.appendChild(particle);
+    }
+
+    // Animation d’ouverture avant redirection
+    function openLetter() {
+      const envelope = document.getElementById('envelope');
+      envelope.classList.add('open');
+
+      setTimeout(() => {
+        window.location.href = "le.html";
+      }, 1600); // 1,6s après clic
+    }
+  </script>
+</body>
+</html>
